@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+</head>
+<style>
+    label {
+        display: block;
+        margin-top: 10px;
+    }
+
+    button {
+        display: block;
+        margin-top: 20px;
+    }
+</style>
+
+<body>
+    <form action="" class="formulario">
+        <label for="">Peso:</label>
+        <input type="text" class="peso">
+        <label for="">Altura</label>
+        <input type="text" class="altura">
+        <button>Enviar</button>
+    </form>
+
+    <div class="output"></div>
+
+    <script>
+        function main() {
+            const formulario = document.querySelector('.formulario')
+            const output = document.querySelector('.output')
+
+            function checar() {
+                if (typeof peso.value !== 'number') {
+                    output.innerHTML = `Peso Invalido`
+                }
+                else if (typeof altura.value !== 'number') {
+                    output.innerHTML = `Altura invalida`
+                }
+
+            }
+
+            function calcular(evento) {
+                evento.preventDefault()
+
+                let inputPeso = evento.target.querySelector('.peso')
+                let inputAltura = evento.target.querySelector('.altura')
+
+                let peso = Number(inputPeso.value)
+                let altura = Number(inputAltura.value)
+
+                if (!peso) {
+                    output.innerHTML = `Peso Inválido`
+                    return
+                }
+                else if (!altura) {
+                    output.innerHTML = `Altura invalida`
+                    return
+                }
+                else {
+
+                    output.innerHTML = `Seu peso é ${inputPeso.value} kg e sua altura é ${inputAltura.value}. Seu IMC é ${inputPeso.value / (inputAltura.value * inputAltura.value)}`
+                }
+            }
+            formulario.addEventListener('submit', calcular)
+
+        }
+        main()
+    </script>
+</body>
+
+</html>

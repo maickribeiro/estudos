@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formata data</title>
+</head>
+
+<body>
+    <div class="output"></div>
+
+    <script>
+
+        const output = document.querySelector('.output')
+
+        function diaDaSemana(dia) {
+            switch (dia) {
+                case 0:
+                    return 'Domingo'
+                case 1:
+                    return 'Segunda-feira'
+                case 2:
+                    return 'Terça-feira'
+                case 3:
+                    return 'Quarta-feira'
+                case 4:
+                    return 'Quinta-Feira'
+                case 5:
+                    return 'Sexta-Feira'
+                case 6:
+                    return 'Sabado'
+            }
+        }
+
+        function mesAno(mes) {
+            switch (mes) {
+                case 0:
+                    return 'janeiro'
+                case 1:
+                    return 'fevereiro'
+                case 2:
+                    return 'março'
+                case 3:
+                    return 'abril'
+                case 4:
+                    return 'maio'
+                case 5:
+                    return 'junho'
+                case 6:
+                    return 'julho'
+                case 7:
+                    return 'agosto'
+                case 8:
+                    return 'setembro'
+                case 9:
+                    return 'outubro'
+                case 10:
+                    return 'novembro'
+                case 11:
+                    return 'dezembro'
+            }
+        }
+
+        function zeroEsquerda(numero) {
+            return numero >= 10 ? numero : `0${numero}`
+        }
+
+        function obtemData(data) {
+            const diaTexto = diaDaSemana(data.getDay())
+            const dia = data.getDate()
+            const mes = mesAno(data.getMonth())
+            const ano = data.getFullYear()
+            const hora = zeroEsquerda(data.getHours())
+            const minuto = zeroEsquerda(data.getMinutes())
+
+            output.innerHTML += `<h1>${diaTexto}, ${dia} de ${mes} de ${ano} ${hora}:${minuto}</h1>`
+        }
+
+        const data = new Date()
+        obtemData(data)
+
+        //Interessante mudar switch case para array
+
+    </script>
+</body>
+
+</html>

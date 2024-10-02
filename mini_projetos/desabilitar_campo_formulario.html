@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desabilita campo formulário</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="">E-mail</label>
+        <input class="campo_email" type="text" disabled onblur="disabledEmail()">
+    </form>
+
+    <button onclick="editar_email()">Editar</button>
+
+    <script>
+        let email = document.querySelector(".campo_email")
+
+        function editar_email() {
+            email.disabled = false
+            email.focus()
+        }
+
+        function desabilita_email() {
+            email.disabled = true
+        }
+    </script>
+</body>
+
+</html>

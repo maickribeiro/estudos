@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatar frase</title>
+</head>
+
+    <style>
+        div {
+            font-size: 1.5em;
+        }
+    </style>
+
+<body>
+    <form action="" class="formulario">
+        <p>Digite a frase:
+            <input type="text" class="frase">
+        </p>
+        <button>Enviar</button>
+
+        <div class="output"></div>
+    </form>
+
+    <script>
+        function principal() {
+            const formulario = document.querySelector('.formulario')
+            const output = document.querySelector('.output')
+            const frase = formulario.querySelector('.frase')
+
+            function enviar(evento) {
+                evento.preventDefault()
+                
+                let fraseDigitada = frase.value.replace(/ /g, '_').replace('.', '').replace('-', '').toLowerCase()
+                
+                output.innerHTML = `aula_${fraseDigitada}` 
+
+            }
+            formulario.addEventListener('submit', enviar)
+        }
+        
+        principal()
+    </script>
+</body>
+
+</html>

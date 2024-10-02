@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formata data melhorado</title>
+</head>
+
+<body>
+    <div class="output"></div>
+
+    <script>
+
+        const opcao1 = {
+            dateStyle: 'full',
+        }
+
+        const opcao2 = {
+            timeStyle: 'short'
+        }
+        const output = document.querySelector('.output')
+        const data = new Date()
+        output.innerHTML += `${data.toLocaleDateString('pt-BR', opcao1)} ` //dateStyle: full
+        output.innerHTML += data.toLocaleTimeString('pt-BR', opcao2) //timeStyle: full
+
+    </script>
+</body>
+
+</html>

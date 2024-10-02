@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário enviar email</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="email">E-mail</label>
+        <input class="email" type="text">
+    </form>
+
+    <button class="button" onclick="enviar_email()">Enviar</button>
+
+    <div class="output">
+
+    </div>
+
+    <script>
+        function enviar_email() {
+
+            let email = document.querySelector(".email")
+            let output = document.querySelector(".output")
+
+            output.innerHTML = `email: ${email.value} cadastrado com sucesso`
+        }
+    </script>
+</body>
+
+</html>
