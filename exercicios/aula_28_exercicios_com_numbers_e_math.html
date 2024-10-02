@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula_28_exercicios_com_numbers_e_math</title>
+</head>
+
+<body>
+
+    <h1 id="numero"></h1>
+    <div id="output">Digite um número válido: </div>
+
+    <script>
+        let numero = prompt('Digite um número: ')
+        numero = Number(numero)
+        const captura = document.querySelector('h1')
+        const output = document.querySelector('#output')
+
+        captura.innerHTML = `Seu número é ${numero}<br>`
+
+        output.innerHTML = " "
+        output.innerHTML += `<p>Raiz quadrada de ${numero} é ${numero ** 0.5}</p>`
+        output.innerHTML += `<p>${numero} é inteiro: ${Number.isInteger(numero)}</p>`
+        output.innerHTML += `<p>${numero} é NaN ${isNaN(numero)}</p>`
+        output.innerHTML += `${numero} Arrendodado para baixo: ${Math.floor(numero)}`
+        output.innerHTML += `<p>${numero} Arrendodado para cima: ${Math.ceil(numero)}</p>`
+        output.innerHTML += `<p>${numero} Com dua casas decimais: ${numero.toFixed(2)}</p>`
+    </script>
+</body>
+
+</html>

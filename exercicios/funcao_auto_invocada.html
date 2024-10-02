@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR
+">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função auto invocada</title>
+</head>
+
+<div id="saida"></div>
+
+<body>
+    <script>
+        (function () {
+            let saida = document.getElementById("saida")
+
+            const sobrenome = 'Ribeiro'
+            function criaNome(nome) {
+                return saida.innerHTML = nome + " " + sobrenome
+            }
+
+            function falaNome() {
+                console.log(criaNome('Maick'))
+            }
+
+            falaNome()
+        })() 
+    </script>
+</body>
+
+</html>

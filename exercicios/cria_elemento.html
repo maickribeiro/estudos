@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cria Elemento</title>
+</head>
+
+<body>
+    <div class="hero">
+        <div class="hero-content"></div>
+    </div>
+    <script>
+        (function () {
+
+            const nome = "Maick"
+            if (nome) {
+                const topBarElemento = document.createElement("div")
+                topBarElemento.className = "top-bar"
+                topBarElemento.innerHTML = `<p>Oi meu nome é ${nome}</p>`
+
+                const elementoPai = document.querySelector(".hero")
+                elementoPai.insertBefore(topBarElemento, elementoPai.firstElementChild)
+            }
+        })()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula_57_exercicios_com_nodelist_(browser)</title>
+</head>
+
+<style>
+    div {
+        background-color: #fff;
+    }
+
+    body {
+        background-color: #043437;
+    }
+</style>
+
+<body>
+    <div class="paragrafos">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit, distinctio?</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit, distinctio?</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit, distinctio?</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit, distinctio?</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit, distinctio?</p>
+    </div>
+
+    <script>
+        const paragrafos = document.querySelector('.paragrafos')
+        const ps = paragrafos.querySelectorAll('p')
+
+        const estilosBody = getComputedStyle(document.body)
+        const backgroundColorBody = estilosBody.backgroundColor
+
+        for (let p of ps) {
+            p.style.backgroundColor = backgroundColorBody
+            p.style.color = '#FFFFFF'
+        }
+    </script>
+</body>
+
+</html>
