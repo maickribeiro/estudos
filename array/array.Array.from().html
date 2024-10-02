@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array.from()</title>
+</head>
+
+<body>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus veritatis, quisquam libero neque consectetur minus?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus veritatis, quisquam libero neque consectetur minus?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus veritatis, quisquam libero neque consectetur minus?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus veritatis, quisquam libero neque consectetur minus?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus veritatis, quisquam libero neque consectetur minus?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus veritatis, quisquam libero neque consectetur minus?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus veritatis, quisquam libero neque consectetur minus?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus veritatis, quisquam libero neque consectetur minus?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus veritatis, quisquam libero neque consectetur minus?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus veritatis, quisquam libero neque consectetur minus?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus veritatis, quisquam libero neque consectetur minus?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus veritatis, quisquam libero neque consectetur minus?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus veritatis, quisquam libero neque consectetur minus?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus veritatis, quisquam libero neque consectetur minus?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus veritatis, quisquam libero neque consectetur minus?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus veritatis, quisquam libero neque consectetur minus?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus veritatis, quisquam libero neque consectetur minus?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus veritatis, quisquam libero neque consectetur minus?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus veritatis, quisquam libero neque consectetur minus?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus veritatis, quisquam libero neque consectetur minus?</p>
+
+    <script>
+        let paragrafos = document.querySelectorAll('p')
+        paragrafos = Array.from(paragrafos)
+        
+        paragrafos.map(function(p, i){
+            p.innerHTML =  `${++i} - ${p.innerHTML}`
+        })
+
+    </script>
+
+</body>
+
+</html>
