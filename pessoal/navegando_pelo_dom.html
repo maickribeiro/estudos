@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegando pelo DOM</title>
+</head>
+
+<body>
+
+    <div class="dad">
+        <h1 class="child">
+            <p class="grandson">Lorem <span>ipsum</span> dolor sit amet.</p>
+        </h1>
+    </div>
+
+    <script>
+
+        const dad =  document.querySelector(".dad")
+        const son = document.querySelector(".child")
+        const grandson = document.querySelector(".grandson")
+        //dad.innerHTML += "<H1>Texto alterado com sucesso</H1>"
+        //const sonToRemove = son.parentElement 
+        //sonToRemove.parentElement.removeChild(sonToRemove)
+
+        const newElement = document.createElement("div")
+        newElement.className = "newClass"
+        newElement.innerHTML = `<h1><p>New content</p></h1>`
+        dad.insertBefore(newElement, son)
+
+        //dad.style.display = "none"
+        //son.parentNode.style.display = "none"
+         //son.parentElement.style.display = "none"
+        //son.style.display = "none"
+        //grandson.style.display = "none"
+
+        //dad.remove()
+        //dad.removeChild()
+        //grandson.remove()
+        
+
+    
+    </script>
+</body>
+
+</html>

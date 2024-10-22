@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem</title>
+</head>
+
+<body>
+    <h1>
+        <p>Aniversário: <span>17/01/1993 00:00</span></p>
+    </h1>
+    <div>
+        <h2>
+            Contagem regressiva: 
+        </h2>
+    </div>
+</body>
+
+<script>
+    let data = new Date().toLocaleString()
+    let aniversario = document.querySelector("h1 p span").innerText
+    let contagemRegressiva = document.querySelector("div h2").innerText = aniversario
+
+</script>
+
+</html>

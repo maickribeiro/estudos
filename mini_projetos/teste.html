@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Financeiro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#balance-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#balance {
+    font-size: 24px;
+    color: #333;
+}
+
+#transaction-form {
+    margin-bottom: 20px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+#transaction-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+#transaction-list li {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    border-left: 5px solid;
+}
+
+.transaction.plus {
+    border-color: #28a745;
+}
+
+.transaction.minus {
+    border-color: #dc3545;
+}
+
+.transaction button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    cursor: pointer;
+}
+</style>
+<body>
+    <div class="container">
+        <h1>Controle de Finanças</h1>
+        <div id="balance-container">
+            <h2>Saldo Atual</h2>
+            <p id="balance">R$ 0,00</p>
+        </div>
+
+        <div id="transaction-form">
+            <h2>Adicionar Transação</h2>
+            <form id="form">
+                <input type="text" id="description" placeholder="Descrição" required>
+                <input type="number" id="amount" placeholder="Valor (ex: -100 para despesa, 100 para receita)" required>
+                <button type="submit">Adicionar Transação</button>
+            </form>
+        </div>
+
+        <div id="transaction-list">
+            <h2>Histórico de Transações</h2>
+            <ul id="transactions"></ul>
+        </div>
+    </div>
+
+    <script>
+        const balanceElement = document.getElementById('balance');
+const transactionsList = document.getElementById('transactions');
+const form = document.getElementById('form');
+const descriptionInput = document.getElementById('description');
+const amountInput = document.getElementById('amount');
+
+let transactions = [];
+
+function updateBalance() {
+    const amounts = transactions.map(transaction => transaction.amount);
+    const total = amounts.reduce((acc, item) => acc + item, 0);
+    balanceElement.innerText = `R$ ${total.toFixed(2)}`;
+}
+
+function addTransactionDOM(transaction) {
+    const sign = transaction.amount < 0 ? '-' : '+';
+    const li = document.createElement('li');
+
+    li.classList.add('transaction');
+    li.classList.add(transaction.amount < 0 ? 'minus' : 'plus');
+
+    li.innerHTML = `
+        ${transaction.description} <span>${sign} R$ ${Math.abs(transaction.amount).toFixed(2)}</span>
+        <button class="delete-btn" onclick="removeTransaction(${transaction.id})">x</button>
+    `;
+
+    transactionsList.appendChild(li);
+}
+
+function removeTransaction(id) {
+    transactions = transactions.filter(transaction => transaction.id !== id);
+    updateUI();
+}
+
+function updateUI() {
+    transactionsList.innerHTML = '';
+    transactions.forEach(addTransactionDOM);
+    updateBalance();
+}
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const description = descriptionInput.value;
+    const amount = +amountInput.value;
+
+    if (description.trim() === '' || isNaN(amount)) {
+        alert('Por favor, preencha a descrição e o valor corretamente.');
+        return;
+    }
+
+    const transaction = {
+        id: Math.floor(Math.random() * 1000000),
+        description,
+        amount
+    };
+
+    transactions.push(transaction);
+    updateUI();
+
+    descriptionInput.value = '';
+    amountInput.value = '';
+});
+    </script>
+</body>
+</html>

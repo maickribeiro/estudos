@@ -1,10 +1,15 @@
 const pessoa = {
-    nome: "Maick",
+    nome: "Laís",
     sobrenome: "Ribeiro",
     idade: 31,
+    criadoEm: new Date(),
+    
     mudaNome:  function(novoNome){
+        console.log(this)
         return this.nome = novoNome 
+        
     }
 }
 
-console.log(pessoa.mudaNome("Lais"))
+pessoa.mudaNome("Maick")
+console.log(pessoa)

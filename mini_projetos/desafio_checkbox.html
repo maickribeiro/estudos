@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio checkbox</title>
+</head>
+
+<body>
+    <input type="checkbox" name="" id="check" onchange="check()">
+    <label for="">Li e aceito o contrato</label><br>
+    <textarea name="" id="" cols="30" rows="15" readonly>Este contrato é fictício...</textarea><br><br>
+    <button disabled class="botao">Enviar</button>
+
+
+    <script>
+        function check() {
+            let check = document.querySelector("#check")
+            let botao = document.querySelector(".botao")
+            let checado = check.checked
+
+            botao.disabled = !checado
+
+            /*
+            if (checado) {
+                botao.disabled = false
+            }
+            else {
+                botao.disabled = true
+            }
+            */
+        }
+    </script>
+</body>
+
+</html>

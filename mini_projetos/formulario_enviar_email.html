@@ -13,19 +13,25 @@
         <input class="email" type="text">
     </form>
 
-    <button class="button" onclick="enviar_email()">Enviar</button>
+    <button onclick="enviar_email()">Enviar</button>
 
     <div class="output">
 
     </div>
 
     <script>
+
+        let email = document.querySelector(".email")
+        let output = document.querySelector(".output")
+
         function enviar_email() {
-
-            let email = document.querySelector(".email")
-            let output = document.querySelector(".output")
-
-            output.innerHTML = `email: ${email.value} cadastrado com sucesso`
+            if (email.value) {
+                let mensagem = email.value
+                output.innerHTML = `<h3> O email: ${mensagem} foi cadastrado com sucesso </h3>`
+            }
+            else {
+                output.innerHTML = `<h3> Digite um e-mail valido </h3>`
+            }
         }
     </script>
 </body>
