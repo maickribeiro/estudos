@@ -2,7 +2,7 @@ const pessoa = {
     nome: 'Maick',
     idade: 31,
 
-    fala(){
+    fala() {
         console.log(`${this.nome} tem ${this.idade}`)
     }
 }

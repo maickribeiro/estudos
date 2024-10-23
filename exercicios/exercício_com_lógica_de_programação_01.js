@@ -1,5 +1,5 @@
 function fiz_buzz(numero) {
-    if (typeof numero !== 'number'){
+    if (typeof numero !== 'number') {
         return numero
     }
     if (numero % 3 === 0 && numero % 5 === 0) {

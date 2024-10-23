@@ -9,6 +9,6 @@ const timer = setInterval(function () {
     console.log(mostraHora())
 }, 1000)
 
-setTimeout(function (){
-clearInterval(timer)
+setTimeout(function () {
+    clearInterval(timer)
 }, 5000)

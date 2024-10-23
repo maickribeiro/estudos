@@ -15,3 +15,19 @@ function diaSemanaTexto(dia) {
 const data = new Date()
 const diaDaSemana = data.getDay()
 console.log(diaSemanaTexto(diaDaSemana))
+
+let nome = 'Laís'
+let nomeCheque
+
+switch (nome) {
+    case 'Jessica':
+        nomeCheque = 'Maick'
+        break
+    case 'Maick':
+        nomeCheque = 'Jessica'
+    default:
+        nomeCheque = "Não encontrado"
+        break;
+        
+}
+console.log(nomeCheque)

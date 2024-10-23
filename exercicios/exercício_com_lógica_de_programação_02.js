@@ -1,5 +1,5 @@
 function modoPaisage(paisagem) {
-    if (paisagem){
+    if (paisagem) {
         return paisagem < 1080 ? 'modo paisagem' : 'modo normal'
     }
 }
