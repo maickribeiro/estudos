@@ -25,7 +25,7 @@ const add = (function () {
         counter += 1
         return counter
     }
-    
+
 }())
 console.log(add())
 console.log(add())
@@ -33,15 +33,15 @@ console.log(add())
 
 function myDisplayer(some) {
     console.log(some)
-} 
+}
 
 function myFirst() {
     myDisplayer("Hello");
-  }
-  
-  function mySecond() {
+}
+
+function mySecond() {
     myDisplayer("Goodbye");
-  }
-  
-  myFirst();
-  mySecond();
+}
+
+myFirst();
+mySecond();

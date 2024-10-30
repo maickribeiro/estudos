@@ -1,16 +1,16 @@
-function criaPessoa (nome, sobrenome, peso, altura) {
+function criaPessoa(nome, sobrenome, peso, altura) {
     return {
         nome,
         sobrenome,
-        fala(assunto){
+        fala(assunto) {
             return `${this.nome} está falando sobre ${assunto} e ele tem ${this.peso}kg`
         },
-        
-        get nomeCompleto(){
+
+        get nomeCompleto() {
             return `Meu nome é ${nome} ${sobrenome}`
         },
 
-        set nomeCompleto(valor){
+        set nomeCompleto(valor) {
             valor = valor.split(' ')
             nome = valor.shift()
             sobrenome = valor.join(' ')
@@ -20,7 +20,7 @@ function criaPessoa (nome, sobrenome, peso, altura) {
         peso: peso,
         altura: altura,
 
-        imc(){
+        imc() {
             return (this.peso / (this.altura ** 2)).toFixed(2)
         }
     }
